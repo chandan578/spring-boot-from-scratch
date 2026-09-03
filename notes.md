@@ -35,3 +35,7 @@ There are mostly two way to initialize a bean in Spring:
 
 ## 8. Bean Lifecycle -> BeanLifecycle
 In this project, we will explore the concept of bean lifecycle in Spring. Bean lifecycle refers to the various stages that a bean goes through during its existence in the Spring container. We will learn about the different stages of the bean lifecycle, including instantiation, initialization, and destruction. We will also learn how to customize the bean lifecycle using various methods, such as implementing the `InitializingBean` and `DisposableBean` interfaces, or using the `@PostConstruct` and `@PreDestroy` annotations.
+
+## 9. XML Based Configuration -> XMLBasedConfig
+XML-based configuration is a way of configuring Spring beans using XML files. In this project, we will explore how to configure beans using XML-based configuration. We will learn about the different elements and attributes available in the Spring XML schema, and how to use them to define beans, set properties, and configure dependencies. We will also learn how to use the `ApplicationContext` interface to load the XML configuration file and retrieve beans from the Spring container.
+This is a legacy way of configuring Spring beans, and it is not recommended for new projects. However, it is still widely used in many existing applications, and it is important to understand how it works.
