@@ -39,3 +39,7 @@ In this project, we will explore the concept of bean lifecycle in Spring. Bean l
 ## 9. XML Based Configuration -> XMLBasedConfig
 XML-based configuration is a way of configuring Spring beans using XML files. In this project, we will explore how to configure beans using XML-based configuration. We will learn about the different elements and attributes available in the Spring XML schema, and how to use them to define beans, set properties, and configure dependencies. We will also learn how to use the `ApplicationContext` interface to load the XML configuration file and retrieve beans from the Spring container.
 This is a legacy way of configuring Spring beans, and it is not recommended for new projects. However, it is still widely used in many existing applications, and it is important to understand how it works.
+
+## 10. Spring Boot -> SpringCore, SpringBootCoreInitializer
+In this project, we will explore the concept of Spring Boot and how it simplifies the process of building and deploying Spring applications. We will learn about the different features of Spring Boot, including auto-configuration, embedded servers, and starter dependencies. We will also learn how to create a Spring Boot application using the Spring Initializer and how to run it using the embedded server. 
+
