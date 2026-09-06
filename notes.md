@@ -43,3 +43,7 @@ This is a legacy way of configuring Spring beans, and it is not recommended for 
 ## 10. Spring Boot -> SpringCore, SpringBootCoreInitializer
 In this project, we will explore the concept of Spring Boot and how it simplifies the process of building and deploying Spring applications. We will learn about the different features of Spring Boot, including auto-configuration, embedded servers, and starter dependencies. We will also learn how to create a Spring Boot application using the Spring Initializer and how to run it using the embedded server. 
 
+## 11. Springboot Application Properties -> SpringBootApplicationProperties
+In this project, we will explore the concept of Spring Boot application properties and how to configure them using the `application.properties` file. We will learn about the different types of properties available in Spring Boot, including server properties, database properties, and logging properties. We will also learn how to customize the application properties using various methods, such as using the `@Value` annotation or creating a custom configuration class.
+And also explore some interfaces like ApplicationRunner and CommandLineRunner to run some code after the application has started. These interfaces can be used to perform tasks such as initializing data, setting up resources, or executing background tasks.
+
