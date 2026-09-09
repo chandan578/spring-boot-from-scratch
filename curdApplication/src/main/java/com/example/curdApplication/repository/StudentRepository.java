@@ -1,20 +1,11 @@
 package com.example.curdApplication.repository;
 
 import com.example.curdApplication.entity.Student;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Component
-public class StudentRepository {
+//@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    public Student saveStudent(Student studentReq){
-        System.out.println("Inside repository..");
-        Student s1 = new Student();
-        s1.setAge(24);
-        s1.setEmail("chandu@gmail.com");
-        s1.setName("chandu");
-        s1.setRollNo(112);
-        s1.setSubject("Angular");
-        System.out.println("exit repository..");
-        return s1;
-    }
+
 }
