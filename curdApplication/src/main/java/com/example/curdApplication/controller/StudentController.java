@@ -22,15 +22,16 @@ public class StudentController {
     @PostMapping("/create") // when we want to use unique name for every api....
 //    @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student){
-        System.out.println("Inside controller");
+
         Student createdStudent = studentService.createStudent(student);
-        System.out.println("exit controller");
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
 
     // read
-    @GetMapping("/get/{id}")
-    public ResponseEntity<Student> getStudent(@PathVariable Long id){
+//    @GetMapping("/get/{id}")
+//    public ResponseEntity<Student> getStudent(@PathVariable Long id){
+    @GetMapping("/get")
+    public ResponseEntity<Student> getStudent(@RequestParam Long id){
         Student res = studentService.getStudent(id);
         if(res==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
@@ -51,8 +52,8 @@ public class StudentController {
 
 
     // update
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentReq){
+    @PutMapping("/update")
+    public ResponseEntity<Student> updateStudent(@RequestParam Long id, @RequestBody Student studentReq){
         Student res = studentService.updateStudent(id, studentReq);
         if(res==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
@@ -62,11 +63,21 @@ public class StudentController {
 
 
     // delete
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable Long id){
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteStudent(@RequestParam Long id){
         Boolean isDeleted = studentService.deleteStudent(id);
 
         if(!isDeleted) return ResponseEntity.notFound().build();
         return ResponseEntity.ok("Record Deleted.");
+    }
+
+    // soft delete
+    @PatchMapping("/delete-soft")
+    public ResponseEntity<String> deleteSoftlyStudent(@RequestParam Long id){
+        Boolean isDeleted = studentService.deleteSoftlyStudent(id);
+
+        if(!isDeleted) return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok("Record Deleted..");
     }
 }
