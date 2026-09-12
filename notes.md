@@ -49,3 +49,6 @@ And also explore some interfaces like ApplicationRunner and CommandLineRunner to
 
 ## 12. CRUD Operations -> CrudApplication
 In this project, we will explore the concept of CRUD (Create, Read, Update, Delete) operations in Spring Boot. We will learn how to create a RESTful API that allows us to perform CRUD operations on a database using Spring Data JPA. We will also learn how to use the `@RestController` annotation to create RESTful endpoints and how to use the `@RequestMapping` annotation to map HTTP requests to controller methods. Additionally, we will explore how to handle exceptions and return appropriate HTTP status codes in our API responses.
+
+## 13. Servlet -> ServletCrud
+In this project, we will explore the concept of Servlets in Java and how to use them to create a simple CRUD application. We will learn about the different types of Servlets available in Java, including `HttpServlet`, `GenericServlet`, and `ServletContext`. We will also learn how to create a Servlet that handles HTTP requests and responses, and how to use the `doGet` and `doPost` methods to handle GET and POST requests. Additionally, we will explore how to use JSP (JavaServer Pages) to create dynamic web pages that interact with our Servlet-based CRUD application.
