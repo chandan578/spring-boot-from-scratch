@@ -52,3 +52,7 @@ In this project, we will explore the concept of CRUD (Create, Read, Update, Dele
 
 ## 13. Servlet -> ServletCrud
 In this project, we will explore the concept of Servlets in Java and how to use them to create a simple CRUD application. We will learn about the different types of Servlets available in Java, including `HttpServlet`, `GenericServlet`, and `ServletContext`. We will also learn how to create a Servlet that handles HTTP requests and responses, and how to use the `doGet` and `doPost` methods to handle GET and POST requests. Additionally, we will explore how to use JSP (JavaServer Pages) to create dynamic web pages that interact with our Servlet-based CRUD application.
+
+
+## 14. Spring MVC -> SpringMvcCrud
+In this project, we will explore the concept of Spring MVC (Model-View-Controller) and how to use it to create a simple CRUD application. We will learn about the different components of the Spring MVC framework, including controllers, views, and models. We will also learn how to use the `@Controller` annotation to create controller classes and how to use the `@RequestMapping` annotation to map HTTP requests to controller methods. Additionally, we will explore how to use JSP (JavaServer Pages) or Thymeleaf templates to create dynamic web pages that interact with our Spring MVC-based CRUD application.
