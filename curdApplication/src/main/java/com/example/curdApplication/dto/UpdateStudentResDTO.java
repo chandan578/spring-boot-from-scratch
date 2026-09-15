@@ -1,40 +1,16 @@
-package com.example.curdApplication.entity;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.*;
+package com.example.curdApplication.dto;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Student {
+public class UpdateStudentResDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotBlank(message = "Name is not blank/empty/only spaces.")
-    @Size(min = 5, max = 20, message = "Name size is between 5 to 20 character.")
     private String name;
-
-    @NotBlank(message = "Age is required.")
-    @Min(value = 18, message = "Age is atleast 18.")
-    private Integer age;
-
-    @NotBlank(message = "Email is required.")
-    @Email(message = "Email must be valid.")
+    private int age;
     private String email;
-
-    @NotNull(message = "RollNo is required.")
-    private Integer rollNo;
-
-    @NotBlank(message = "Subject is required.")
-    @Size(min = 2, max = 10, message = "Subject name is between 2 to 10 character.")
+    private int rollNo;
     private String subject;
-
-    private Boolean isDeleted;
+    private String message;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -86,12 +62,12 @@ public class Student {
         this.subject = subject;
     }
 
-    public Boolean getDeleted() {
-        return isDeleted;
+    public String getMessage() {
+        return message;
     }
 
-    public void setDeleted(Boolean deleted) {
-        isDeleted = deleted;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public LocalDateTime getCreatedAt() {

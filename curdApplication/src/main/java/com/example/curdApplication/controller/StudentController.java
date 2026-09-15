@@ -1,7 +1,12 @@
 package com.example.curdApplication.controller;
 
+import com.example.curdApplication.dto.CreateStudentReqDTO;
+import com.example.curdApplication.dto.CreateStudentResDTO;
+import com.example.curdApplication.dto.UpdateStudentReqDTO;
+import com.example.curdApplication.dto.UpdateStudentResDTO;
 import com.example.curdApplication.entity.Student;
 import com.example.curdApplication.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +26,9 @@ public class StudentController {
     // create
     @PostMapping("/create") // when we want to use unique name for every api....
 //    @PostMapping
-    public ResponseEntity<Student> createStudent(@RequestBody Student student){
+    public ResponseEntity<CreateStudentResDTO> createStudent(@Valid @RequestBody CreateStudentReqDTO req){
 
-        Student createdStudent = studentService.createStudent(student);
+        CreateStudentResDTO createdStudent = studentService.createStudent(req);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
 
@@ -31,8 +36,8 @@ public class StudentController {
 //    @GetMapping("/get/{id}")
 //    public ResponseEntity<Student> getStudent(@PathVariable Long id){
     @GetMapping("/get")
-    public ResponseEntity<Student> getStudent(@RequestParam Long id){
-        Student res = studentService.getStudent(id);
+    public ResponseEntity<CreateStudentResDTO> getStudent(@RequestParam Long id){
+        CreateStudentResDTO res = studentService.getStudent(id);
         if(res==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
 
@@ -40,8 +45,8 @@ public class StudentController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Student>> getAllStudent(){
-        List<Student> studentList = studentService.getAllStudent();
+    public ResponseEntity<List<CreateStudentResDTO>> getAllStudent(){
+        List<CreateStudentResDTO> studentList = studentService.getAllStudent();
 
         if(studentList.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -53,8 +58,8 @@ public class StudentController {
 
     // update
     @PutMapping("/update")
-    public ResponseEntity<Student> updateStudent(@RequestParam Long id, @RequestBody Student studentReq){
-        Student res = studentService.updateStudent(id, studentReq);
+    public ResponseEntity<UpdateStudentResDTO> updateStudent(@RequestParam Long id, @RequestBody UpdateStudentReqDTO studentReq){
+        UpdateStudentResDTO res = studentService.updateStudent(id, studentReq);
         if(res==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
 

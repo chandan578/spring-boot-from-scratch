@@ -56,3 +56,9 @@ In this project, we will explore the concept of Servlets in Java and how to use 
 
 ## 14. Spring MVC -> SpringMvcCrud
 In this project, we will explore the concept of Spring MVC (Model-View-Controller) and how to use it to create a simple CRUD application. We will learn about the different components of the Spring MVC framework, including controllers, views, and models. We will also learn how to use the `@Controller` annotation to create controller classes and how to use the `@RequestMapping` annotation to map HTTP requests to controller methods. Additionally, we will explore how to use JSP (JavaServer Pages) or Thymeleaf templates to create dynamic web pages that interact with our Spring MVC-based CRUD application.
+
+## 15. Spring Boot MVC -> SpringBootMvcCrud
+In this project, we will explore the concept of Spring Boot MVC and how to use it to create a simple CRUD application. We will learn about the different features of Spring Boot MVC, including auto-configuration, embedded servers, and starter dependencies. We will also learn how to create a Spring Boot MVC application using the Spring Initializer and how to run it using the embedded server. Additionally, we will explore how to use Thymeleaf templates to create dynamic web pages that interact with our Spring Boot MVC-based CRUD application.
+
+## 16. DTO and Validation -> CrudApplication
+In this project, we will explore the concept of DTO (Data Transfer Object) and validation in Spring Boot. We will learn how to create DTO classes that represent the data we want to transfer between the client and server. We will also learn how to use validation annotations, such as `@NotNull`, `@Size`, and `@Email`, to validate the input data received from the client. Additionally, we will explore how to handle validation errors and return appropriate error messages in our API responses.
