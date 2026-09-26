@@ -1,4 +1,4 @@
-package com.example.curdApplication.dto;
+package com.example.CurdApplication.dto;
 
 import java.time.LocalDateTime;
 

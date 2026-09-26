@@ -1,8 +1,7 @@
-package com.example.curdApplication.repository;
+package com.example.CurdApplication.repository;
 
-import com.example.curdApplication.entity.Student;
+import com.example.CurdApplication.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;

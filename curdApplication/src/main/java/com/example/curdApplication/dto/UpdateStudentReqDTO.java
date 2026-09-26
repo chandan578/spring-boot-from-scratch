@@ -1,4 +1,4 @@
-package com.example.curdApplication.dto;
+package com.example.CurdApplication.dto;
 
 public class UpdateStudentReqDTO {
     private String name;
