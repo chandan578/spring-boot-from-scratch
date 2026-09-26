@@ -1,11 +1,10 @@
-package com.example.curdApplication.controller;
+package com.example.CurdApplication.controller;
 
-import com.example.curdApplication.dto.CreateStudentReqDTO;
-import com.example.curdApplication.dto.CreateStudentResDTO;
-import com.example.curdApplication.dto.UpdateStudentReqDTO;
-import com.example.curdApplication.dto.UpdateStudentResDTO;
-import com.example.curdApplication.entity.Student;
-import com.example.curdApplication.service.StudentService;
+import com.example.CurdApplication.dto.CreateStudentReqDTO;
+import com.example.CurdApplication.dto.CreateStudentResDTO;
+import com.example.CurdApplication.dto.UpdateStudentReqDTO;
+import com.example.CurdApplication.dto.UpdateStudentResDTO;
+import com.example.CurdApplication.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +23,8 @@ public class StudentController {
     }
 
     // create
-    @PostMapping("/create") // when we want to use unique name for every api....
-//    @PostMapping
+//    @PostMapping("/create") // when we want to use unique name for every api....
+    @PostMapping
     public ResponseEntity<CreateStudentResDTO> createStudent(@Valid @RequestBody CreateStudentReqDTO req){
 
         CreateStudentResDTO createdStudent = studentService.createStudent(req);
@@ -33,10 +32,10 @@ public class StudentController {
     }
 
     // read
-//    @GetMapping("/get/{id}")
-//    public ResponseEntity<Student> getStudent(@PathVariable Long id){
-    @GetMapping("/get")
-    public ResponseEntity<CreateStudentResDTO> getStudent(@RequestParam Long id){
+//    @GetMapping("/get")
+//    public ResponseEntity<CreateStudentResDTO> getStudent(@RequestParam Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<CreateStudentResDTO> getStudent(@PathVariable Long id){
         CreateStudentResDTO res = studentService.getStudent(id);
         if(res==null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
@@ -44,7 +43,7 @@ public class StudentController {
 //        return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping
     public ResponseEntity<List<CreateStudentResDTO>> getAllStudent(){
         List<CreateStudentResDTO> studentList = studentService.getAllStudent();
 
@@ -57,7 +56,7 @@ public class StudentController {
 
 
     // update
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<UpdateStudentResDTO> updateStudent(@RequestParam Long id, @RequestBody UpdateStudentReqDTO studentReq){
         UpdateStudentResDTO res = studentService.updateStudent(id, studentReq);
         if(res==null) return ResponseEntity.notFound().build();
@@ -68,7 +67,7 @@ public class StudentController {
 
 
     // delete
-    @DeleteMapping("/delete")
+    @DeleteMapping
     public ResponseEntity<String> deleteStudent(@RequestParam Long id){
         Boolean isDeleted = studentService.deleteStudent(id);
 

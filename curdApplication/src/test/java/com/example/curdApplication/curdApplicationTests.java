@@ -1,4 +1,4 @@
-package com.example.curdApplication;
+package com.example.CurdApplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

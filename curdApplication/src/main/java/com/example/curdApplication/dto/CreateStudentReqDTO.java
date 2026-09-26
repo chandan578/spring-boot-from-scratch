@@ -1,12 +1,27 @@
-package com.example.curdApplication.dto;
+package com.example.CurdApplication.dto;
 
+
+import jakarta.validation.constraints.*;
 
 public class CreateStudentReqDTO {
 
+    @NotBlank(message = "Name is not blank/empty/only spaces.")
+    @Size(min = 5, max = 20, message = "Name size is between 5 to 20 character.")
     private String name;
-    private int age;
+
+    @NotNull(message = "Age is required.")
+    @Min(value = 18, message = "Age is atleast 18.")
+    private Integer age;
+
+    @NotBlank(message = "Email is required.")
+    @Email(message = "Email must be valid.")
     private String email;
-    private int rollNo;
+
+    @NotNull(message = "RollNo is required.")
+    private Integer rollNo;
+
+    @NotBlank(message = "Subject is required.")
+    @Size(min = 2, max = 10, message = "Subject name is between 2 to 10 character.")
     private String subject;
 
     public String getName() {

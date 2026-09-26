@@ -1,11 +1,11 @@
-package com.example.curdApplication.service;
+package com.example.CurdApplication.service;
 
-import com.example.curdApplication.dto.CreateStudentReqDTO;
-import com.example.curdApplication.dto.CreateStudentResDTO;
-import com.example.curdApplication.dto.UpdateStudentReqDTO;
-import com.example.curdApplication.dto.UpdateStudentResDTO;
-import com.example.curdApplication.entity.Student;
-import com.example.curdApplication.repository.StudentRepository;
+import com.example.CurdApplication.dto.CreateStudentReqDTO;
+import com.example.CurdApplication.dto.CreateStudentResDTO;
+import com.example.CurdApplication.dto.UpdateStudentReqDTO;
+import com.example.CurdApplication.dto.UpdateStudentResDTO;
+import com.example.CurdApplication.entity.Student;
+import com.example.CurdApplication.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

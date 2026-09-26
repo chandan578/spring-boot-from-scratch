@@ -1,8 +1,7 @@
-package com.example.curdApplication;
+package com.example.CurdApplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 
 @SpringBootApplication
 public class CurdApplication {
