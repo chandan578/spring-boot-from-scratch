@@ -62,3 +62,7 @@ In this project, we will explore the concept of Spring Boot MVC and how to use i
 
 ## 16. DTO and Validation -> CrudApplication
 In this project, we will explore the concept of DTO (Data Transfer Object) and validation in Spring Boot. We will learn how to create DTO classes that represent the data we want to transfer between the client and server. We will also learn how to use validation annotations, such as `@NotNull`, `@Size`, and `@Email`, to validate the input data received from the client. Additionally, we will explore how to handle validation errors and return appropriate error messages in our API responses.
+
+## 17. Exception Handling -> CrudApplication
+In this project, we will explore the concept of exception handling in Spring Boot. We will learn how to handle exceptions that occur during the execution of our application and return appropriate error responses to the client. We will also learn how to use the `@ControllerAdvice` and `@RestControllerAdvice` annotation to create a global exception handler that can handle exceptions thrown by any controller in our application. Additionally, we will explore how to create custom exception classes and return meaningful error messages to the client.
+In this, we return appropriate HTTP status codes in our API responses, such as `400 Bad Request`, `404 Not Found`, and `500 Internal Server Error`. We will also learn how to log exceptions for debugging and monitoring purposes.
