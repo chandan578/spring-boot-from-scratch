@@ -5,6 +5,8 @@ import com.example.CurdApplication.dto.CreateStudentResDTO;
 import com.example.CurdApplication.dto.UpdateStudentReqDTO;
 import com.example.CurdApplication.dto.UpdateStudentResDTO;
 import com.example.CurdApplication.entity.Student;
+import com.example.CurdApplication.exception.DuplicateResourceException;
+import com.example.CurdApplication.exception.RescourceNotFoundException;
 import com.example.CurdApplication.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,17 +25,20 @@ public class StudentService {
 
     public CreateStudentResDTO createStudent(CreateStudentReqDTO req){
         Student student = mapToEntity(req);
+
+        if(emailExists(student)){
+            throw new DuplicateResourceException("Student email id "+ student.getEmail()+ " already exist.");
+        }
         Student studentRes = studentRepository.save(student);
 
         return mapToDTO(studentRes);
     }
 
     public CreateStudentResDTO getStudent(Long id){
-        Optional<Student> res = studentRepository.findByIdAndIsDeletedIsFalse(id);
+        Student studentResp = studentRepository.findByIdAndIsDeletedIsFalse(id)
+                .orElseThrow(()-> new RescourceNotFoundException("Student with id "+ id+" not found."));
 
-        if(res.isPresent()) return mapToDTO(res.get());
-
-        return null;
+        return mapToDTO(studentResp);
     }
 
     public List<CreateStudentResDTO> getAllStudent(){
@@ -43,37 +48,32 @@ public class StudentService {
     }
 
     public UpdateStudentResDTO updateStudent(Long id, UpdateStudentReqDTO studentReq){
-        Optional<Student>  prevData = studentRepository.findByIdAndIsDeletedIsFalse(id);
-        if(prevData.isEmpty()) return null;
+        Student prevData = studentRepository.findByIdAndIsDeletedIsFalse(id)
+                .orElseThrow(()-> new RescourceNotFoundException("Student with id "+ id+ " not found..."));
 
-        Student updatedData = prevData.get();
-        updatedData.setSubject(studentReq.getSubject());
-        updatedData.setRollNo(studentReq.getRollNo());
-        updatedData.setName(studentReq.getName());
-        updatedData.setAge(studentReq.getAge());
-        updatedData.setUpdatedAt(LocalDateTime.now());
+        prevData.setSubject(studentReq.getSubject());
+        prevData.setRollNo(studentReq.getRollNo());
+        prevData.setName(studentReq.getName());
+        prevData.setAge(studentReq.getAge());
+        prevData.setUpdatedAt(LocalDateTime.now());
 
-        Student updatedStudent = studentRepository.save(updatedData);
+        Student updatedStudent = studentRepository.save(prevData);
         return mapToUpdateDTO(updatedStudent);
     }
 
-    public Boolean deleteStudent(Long id){
-        Boolean isStudent = studentRepository.existsById(id);
-
-        if(!isStudent) return  false;
+    public void deleteStudent(Long id){
+        Student isStudentToBe = studentRepository.findById(id)
+                .orElseThrow(()-> new RescourceNotFoundException("Student with id "+ id+ " not found.."));
 
         studentRepository.deleteById(id);
-        return true;
     }
 
-    public Boolean deleteSoftlyStudent(Long id){
-        Optional<Student> prevData = studentRepository.findByIdAndIsDeletedIsFalse(id);
-        if(prevData.isEmpty()) return false;
+    public void deleteSoftlyStudent(Long id){
+        Student prevData = studentRepository.findByIdAndIsDeletedIsFalse(id)
+                .orElseThrow(()-> new RescourceNotFoundException("Student with id "+ id + " not found.."));
 
-        Student updateData = prevData.get();
-        updateData.setDeleted(true);
-        studentRepository.save(updateData);
-        return true;
+        prevData.setDeleted(true);
+        studentRepository.save(prevData);
     }
 
     public Student mapToEntity(CreateStudentReqDTO reqDTO){
@@ -116,5 +116,9 @@ public class StudentService {
         studentResDTO.setMessage("Student updated successfully..");
 
         return  studentResDTO;
+    }
+
+    public boolean emailExists(Student student){
+        return studentRepository.existsByEmail(student.getEmail());
     }
 }
