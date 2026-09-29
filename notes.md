@@ -71,4 +71,4 @@ In this, we return appropriate HTTP status codes in our API responses, such as `
 In this project, we will explore the concept of profiles and environments in Spring Boot. We will learn how to create different profiles for our application, such as development, testing, and production, and how to configure different properties for each profile using the `application.properties` or `application-dev.properties` or `application-prod.properties` file. We will also learn how to use the `@Profile` annotation to conditionally load beans based on the active profile. Additionally, we will explore how to access environment properties using the `Environment` interface and how to use them in our application.
 In this we use command line arguments to set the active profile when running the application. For example, 
 By default run command is `mvn spring-boot:run` but to set the active profile we can use the following command:
-`mvn spring-boot:run "-Dspring-boot.run.profiles=dev"`
+`mvn spring-boot:run "-Dspring-boot.run.profiles=dev"`git
