@@ -66,3 +66,9 @@ In this project, we will explore the concept of DTO (Data Transfer Object) and v
 ## 17. Exception Handling -> CrudApplication
 In this project, we will explore the concept of exception handling in Spring Boot. We will learn how to handle exceptions that occur during the execution of our application and return appropriate error responses to the client. We will also learn how to use the `@ControllerAdvice` and `@RestControllerAdvice` annotation to create a global exception handler that can handle exceptions thrown by any controller in our application. Additionally, we will explore how to create custom exception classes and return meaningful error messages to the client.
 In this, we return appropriate HTTP status codes in our API responses, such as `400 Bad Request`, `404 Not Found`, and `500 Internal Server Error`. We will also learn how to log exceptions for debugging and monitoring purposes.
+
+## 18. Profile and Environment -> ProfilingDemo
+In this project, we will explore the concept of profiles and environments in Spring Boot. We will learn how to create different profiles for our application, such as development, testing, and production, and how to configure different properties for each profile using the `application.properties` or `application-dev.properties` or `application-prod.properties` file. We will also learn how to use the `@Profile` annotation to conditionally load beans based on the active profile. Additionally, we will explore how to access environment properties using the `Environment` interface and how to use them in our application.
+In this we use command line arguments to set the active profile when running the application. For example, 
+By default run command is `mvn spring-boot:run` but to set the active profile we can use the following command:
+`mvn spring-boot:run "-Dspring-boot.run.profiles=dev"`
