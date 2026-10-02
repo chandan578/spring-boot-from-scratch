@@ -72,3 +72,6 @@ In this project, we will explore the concept of profiles and environments in Spr
 In this we use command line arguments to set the active profile when running the application. For example, 
 By default run command is `mvn spring-boot:run` but to set the active profile we can use the following command:
 `mvn spring-boot:run "-Dspring-boot.run.profiles=dev"`git
+
+## 19. Filters -> FilterDemo
+In this project, we will explore the concept of filters in Spring Boot. In this we use servlet filters to intercept incoming HTTP requests and perform pre-processing or post-processing tasks. We will learn how to create custom filters by implementing the `javax.servlet.Filter` interface and how to register them in our Spring Boot application. Additionally, we will explore how to use filters for tasks such as logging, authentication, and request modification.
