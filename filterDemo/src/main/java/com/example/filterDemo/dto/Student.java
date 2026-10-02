@@ -1,4 +1,4 @@
-package com.example.filterDemo.model;
+package com.example.filterDemo.dto;
 
 public class Student {
 
