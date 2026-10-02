@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@Component
-@Order(1)
+//@Component
+//@Order(1)
 public class AuthorizationFilter implements Filter {
 
     @Override
@@ -20,14 +20,18 @@ public class AuthorizationFilter implements Filter {
         String token = ((HttpServletRequest) request).getHeader("token");
         String apiKey = ((HttpServletRequest) request).getHeader("x-api-key");
         if(token == null || !token.equals("12345")){
-            ((HttpServletResponse) response).setStatus(httpServletResponse.SC_UNAUTHORIZED);
+            httpServletResponse.setStatus(httpServletResponse.SC_UNAUTHORIZED);
+            httpServletResponse.setContentType("application/json");
+            httpServletResponse.getWriter().write("{\n" +
+                    "    \"message\": \"Authentication is required...\"\n" +
+                    "}");
             return;
         }
 
         if(apiKey==null || !apiKey.equals("kittu123")){
-            ((HttpServletResponse) response).setStatus(httpServletResponse.SC_UNAUTHORIZED);
-            ((HttpServletResponse) response).setContentType("application/json");
-            ((HttpServletResponse) response).getWriter().write("{\n" +
+            httpServletResponse.setStatus(httpServletResponse.SC_UNAUTHORIZED);
+            httpServletResponse.setContentType("application/json");
+            httpServletResponse.getWriter().write("{\n" +
                     "    \"message\": \"Invalid or missing api key..\"\n" +
                     "}");
             return;
