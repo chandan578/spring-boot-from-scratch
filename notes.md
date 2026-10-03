@@ -75,3 +75,6 @@ By default run command is `mvn spring-boot:run` but to set the active profile we
 
 ## 19. Filters -> FilterDemo
 In this project, we will explore the concept of filters in Spring Boot. In this we use servlet filters to intercept incoming HTTP requests and perform pre-processing or post-processing tasks. We will learn how to create custom filters by implementing the `javax.servlet.Filter` interface and how to register them in our Spring Boot application. Additionally, we will explore how to use filters for tasks such as logging, authentication, and request modification.
+
+## 20. Interceptors -> Interceptor
+In this project, we will explore the concept of interceptors in Spring Boot. Interceptors are similar to filters, but they are specific to Spring MVC and provide a way to intercept requests and responses at the controller level. We will learn how to create custom interceptors by implementing the `HandlerInterceptor` interface and how to register them in our Spring Boot application. Additionally, we will explore how to use interceptors for tasks such as logging, authentication, and request modification. We will also learn about the different methods available in the `HandlerInterceptor` interface, such as `preHandle`, `postHandle`, and `afterCompletion`, and how to use them to perform tasks before and after the controller method is executed.
