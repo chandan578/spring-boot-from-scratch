@@ -82,3 +82,5 @@ In this project, we will explore the concept of interceptors in Spring Boot. Int
 ## 21. AOP (Aspect Oriented Programming) -> AOPIntroduction
 In this project, we will explore the concept of AOP (Aspect Oriented Programming) in Spring Boot. AOP allows us to separate cross-cutting concerns, such as logging, security, and transaction management, from the main business logic of our application.
 
+## 22. AOP (Aspect Oriented Programming) -> AOP
+In this project, we will explore the concept of AOP (Aspect Oriented Programming) in Spring Boot. AOP allows us to separate cross-cutting concerns, such as logging, security, and transaction management, from the main business logic of our application. We will learn how to create aspects using the `@Aspect` annotation and how to define pointcuts and advice using annotations such as `@Before`, `@After`, `@AfterReturning`, `@AfterThrowing`, and `@Around`. Additionally, we will explore how to use AOP for tasks such as logging method execution time, handling exceptions, and implementing security checks.
