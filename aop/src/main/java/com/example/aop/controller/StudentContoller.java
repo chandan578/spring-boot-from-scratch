@@ -2,6 +2,7 @@ package com.example.aop.controller;
 
 import com.example.aop.dto.Student;
 import com.example.aop.service.StudentService;
+import com.example.aop.service.StudentServiceInterface;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/students")
 public class StudentContoller {
 
-    private StudentService studentService;
-    public StudentContoller(StudentService studentService){
+    private StudentServiceInterface studentService;
+    public StudentContoller(StudentServiceInterface studentService){
         this.studentService = studentService;
     }
 

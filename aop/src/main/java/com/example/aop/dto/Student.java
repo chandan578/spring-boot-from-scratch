@@ -1,8 +1,10 @@
 package com.example.aop.dto;
 
+import jdk.jfr.Timestamp;
 import org.springframework.stereotype.Component;
 
 @Component
+@Timestamp
 public class Student {
 
     private String name;

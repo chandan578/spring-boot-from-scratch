@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class LoggingAspect {
 
 //    @Before("execution(String com.example.aop.service.StudentService.createStudent())")
 //    public void logBeforeMethod(){
 //        System.out.println("form logBefore, Student is going to be saved...");
 //    }
-
+//
 //    @AfterReturning(value = "execution(* com.example.aop.service.StudentService.createStudent(..))", returning = "result")
 //    public void logAfterMethod(Student result){
 //        result.setName("Chandan");
@@ -24,13 +24,13 @@ public class LoggingAspect {
 //        System.out.println("log after method execution.....");
 //        System.out.println("Target result : "+ result);
 //    }
-
+//
 //    @AfterThrowing(value = "execution(* com.example.aop.service.StudentService.createStudent(..))", throwing = "exception")
 //    public void logAfterThrowMethod(RuntimeException exception){
 //        System.out.println("Exception type: "+ exception.getClass().getName());
 //        System.out.println("Exception message: "+ exception.getMessage());
 //    }
-
+//
 //    @After(value = "execution(* com.example.aop.service.StudentService.createStudent(..))")
 //    public void logAfterMethod(){
 //        System.out.println("logAfterMethod executed..");
@@ -56,18 +56,18 @@ public class LoggingAspect {
 //
 ////        return student;
 //    }
-
-    @Around(value = "execution(* com.example.aop.service.StudentService.getStudentName(..))")
-    public Object logAroundMethod(ProceedingJoinPoint joinPoint) throws Throwable {
-
-        Object[] arr = joinPoint.getArgs();
-        String name = (String) arr[0];
-        String modifiedName = name.toUpperCase();
-        Object[] modified = {
-                modifiedName
-        };
-        String returnData = (String) joinPoint.proceed(modified) + " : Intercepted data";
-
-        return returnData;
-    }
+//
+//    @Around(value = "execution(* com.example.aop.service.StudentService.getStudentName(..))")
+//    public Object logAroundMethod2(ProceedingJoinPoint joinPoint) throws Throwable {
+//
+//        Object[] arr = joinPoint.getArgs();
+//        String name = (String) arr[0];
+//        String modifiedName = name.toUpperCase();
+//        Object[] modified = {
+//                modifiedName
+//        };
+//        String returnData = (String) joinPoint.proceed(modified) + " : Intercepted data";
+//
+//        return returnData;
+//    }
 }
