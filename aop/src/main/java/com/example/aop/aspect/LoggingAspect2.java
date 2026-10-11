@@ -1,6 +1,9 @@
 package com.example.aop.aspect;
 
 
+import com.example.aop.annotation.TrackExecutionTime;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -82,11 +85,35 @@ public class LoggingAspect2 {
 //        System.out.println("Before method intercepted...");
 //    }
 
-    @Before("this(com.example.aop.service.StudentService)")
-    public void loggingBeforeMethod2(){
-        System.out.println("Before method intercepted...");
-    }
+//    @Before("this(com.example.aop.service.StudentService)")
+//    public void loggingBeforeMethod2(){
+//        System.out.println("Before method intercepted...");
+//    }
     // In both target and this pointcut expression, it changes depending on the proxy type. There are two types of proxies in Spring AOP: JDK dynamic proxies and CGLIB proxies, by default uses CGLIB proxies. When we use CGLIB proxies, the target pointcut expression will match the proxy object, while the this pointcut expression will match the actual target object.
     // when we use JDK dynamic proxies, the target pointcut expression will match the actual target object, while the this pointcut expression will match the proxy object.
 
+
+
+//    @Around("@annotation(com.example.aop.annotation.TrackExecutionTime)")
+    @Around("@annotation(trackExecutionTime)")
+    public Object measureExecutionTime(ProceedingJoinPoint joinPoint, TrackExecutionTime trackExecutionTime) throws Throwable {
+        long startTime = System.currentTimeMillis();
+
+        try {
+            return joinPoint.proceed();
+        }
+        finally {
+            long duration = System.currentTimeMillis() - startTime;
+
+            long warnThreshold = trackExecutionTime.warnAfter();
+            String operation = trackExecutionTime.operation();
+            if(operation.isBlank()) operation = joinPoint.getSignature().getName();
+
+            if(duration>= warnThreshold){
+                System.out.println("SLOW OPERATION ALEART : " + "time take by "+ operation + " : "+ duration);
+            }else {
+                System.out.println("Time taken by "+ operation + " : "+ duration);
+            }
+        }
+    }
 }
