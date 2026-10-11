@@ -87,3 +87,7 @@ In this project, we will explore the concept of AOP (Aspect Oriented Programming
 
 ## 23. AOP Pointcut Expressions -> AOP
 In this project, we will explore the concept of AOP pointcut expressions in Spring Boot. Pointcut expressions are used to define the join points where advice should be applied. We will learn about the different types of pointcut expressions available in Spring AOP, including `execution`, `within`, `this`, `target`, `args`, and `annotation-based` pointcuts. Additionally, we will explore how to use pointcut expressions to match specific methods or classes and how to combine multiple pointcut expressions using logical operators such as `&&`, `||`, and `!`.
+
+## 24. AOP Annotation-based Configuration -> AOP
+In this project, we will explore the concept of AOP annotation-based configuration in Spring Boot. In this we create custom annotations to define pointcuts and advice, allowing us to apply AOP functionality in a more declarative and reusable manner. We will learn how to create custom annotations using the `@interface` keyword and how to use them in conjunction with the `@Aspect` annotation to define pointcuts and advice. Additionally, we will explore how to use custom annotations to implement cross-cutting concerns such as logging, security, and transaction management in a more modular and maintainable way. In this also use like @Traget, @Retention, @Documented, @Inherited, and @Repeatable annotations to define the behavior and characteristics of our custom annotations.
+
