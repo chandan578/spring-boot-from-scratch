@@ -91,3 +91,8 @@ In this project, we will explore the concept of AOP pointcut expressions in Spri
 ## 24. AOP Annotation-based Configuration -> AOP
 In this project, we will explore the concept of AOP annotation-based configuration in Spring Boot. In this we create custom annotations to define pointcuts and advice, allowing us to apply AOP functionality in a more declarative and reusable manner. We will learn how to create custom annotations using the `@interface` keyword and how to use them in conjunction with the `@Aspect` annotation to define pointcuts and advice. Additionally, we will explore how to use custom annotations to implement cross-cutting concerns such as logging, security, and transaction management in a more modular and maintainable way. In this also use like @Traget, @Retention, @Documented, @Inherited, and @Repeatable annotations to define the behavior and characteristics of our custom annotations.
 
+## 25. JDBC -> jdbc
+In this project, we will explore the concept of JDBC (Java Database Connectivity) in Spring Boot. JDBC is a standard API for connecting to relational databases and executing SQL queries. We do CRUD operations using JDBC. 
+
+## 26. Spring JDBC -> SpringJdbc
+In this project, we will explore the concept of Spring JDBC in Spring Boot. Spring JDBC is a framework that simplifies the use of JDBC by providing a higher-level abstraction for database access. We will learn how to use Spring JDBC to perform CRUD operations on a database using the `JdbcTemplate` class. We will also learn how to configure a data source and how to handle exceptions using Spring's exception hierarchy. 
