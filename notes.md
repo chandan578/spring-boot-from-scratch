@@ -96,3 +96,7 @@ In this project, we will explore the concept of JDBC (Java Database Connectivity
 
 ## 26. Spring JDBC -> SpringJdbc
 In this project, we will explore the concept of Spring JDBC in Spring Boot. Spring JDBC is a framework that simplifies the use of JDBC by providing a higher-level abstraction for database access. We will learn how to use Spring JDBC to perform CRUD operations on a database using the `JdbcTemplate` class. We will also learn how to configure a data source and how to handle exceptions using Spring's exception hierarchy. 
+
+## 27. Hibernate -> Hibernate
+In this project, we will explore the concept of Hibernate in Spring Boot. Hibernate is an ORM (Object-Relational Mapping) framework that allows us to map Java objects to database tables and perform CRUD operations using object-oriented programming concepts. We will learn how to configure Hibernate in a Spring Boot application, how to create entity classes, and how to use the `Transactional` APIs to perform CRUD operations on a database. Additionally, we will explore how to store any collection of data in a database using Hibernate, such as lists, sets, and maps and also explore how to store objects in database and it automatically create tables in database using Hibernate with join tables with foreign key.
+
