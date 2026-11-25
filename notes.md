@@ -102,3 +102,7 @@ In this project, we will explore the concept of Hibernate in Spring Boot. Hibern
 
 ## 28. Hibernate Internal -> Hibernate
 In this project, we will explore the internal workings of Hibernate in Spring Boot. We will learn about the different components of Hibernate, including the SessionFactory, Session, Transaction, and Query objects. We will also learn how to use Hibernate's caching mechanisms to improve performance and reduce database access. Additionally, we will explore how to use Hibernate's criteria API and HQL (Hibernate Query Language) to perform complex queries on a database. In this also explore EntityManager, PersistenceContext, and PersistenceUnit annotations to manage the persistence context and entity manager in a Spring Boot application.
+
+## 29. JPA Relationships -> jpaRelationship
+In this project, we will explore the concept of JPA (Java Persistence API) relationships in Spring Boot. JPA provides a way to define relationships between entities in a database, such as one-to-one, one-to-many, and many-to-many relationships. We will learn how to use JPA annotations, such as `@OneToOne`, `@OneToMany`, and `@ManyToMany`, to define relationships between entities and how to use the `mappedBy` attribute to specify the owning side of the relationship. Additionally, we will explore how to use JPA's cascading and fetching strategies to manage related entities in a more efficient manner.
+
